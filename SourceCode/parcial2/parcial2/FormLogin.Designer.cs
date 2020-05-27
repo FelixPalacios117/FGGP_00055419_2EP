@@ -84,6 +84,7 @@ namespace parcial2
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(322, 38);
             this.txtPassword.TabIndex = 8;
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
