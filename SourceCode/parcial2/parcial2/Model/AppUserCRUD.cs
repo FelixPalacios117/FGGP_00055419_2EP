@@ -11,6 +11,7 @@ namespace parcial2
         public static bool tipo = false;//false normal,true admin
         public static int iniciarsesion(string usuario, string contraseña)
         {
+            id_obtenido = 0;
             DataTable dt = null; 
             try
             {
@@ -31,6 +32,42 @@ namespace parcial2
                 MessageBox.Show("Hubo un error" + e);
             } 
             return id_obtenido;
+        }
+        public static bool compararcontraseña(string contraseña,int id)
+        {
+            bool encontrado = false;
+            try
+            {
+                string sql = $"select idUser,password from appuser where idUser={id} and password='{contraseña}'";
+                DataTable dt = ConnectionDB.ExecuteQuery(sql); 
+                    if (dt != null)
+                    {
+                        foreach (DataRow var in dt.Rows)
+                        {
+                            encontrado = true;
+                        }
+                    } 
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error" + e);
+            }
+            return encontrado;
+        }
+        public static void modificarpassword(string contra,int id)
+        {
+            try
+            {
+                string sql = String.Format(
+                    "update appuser set password='{0}' where iduser='{1}';",
+                    contra,id);
+                ConnectionDB.Executenonquery(sql);
+                MessageBox.Show("Datos modificados correctamente");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Ha ocurrido un error" + e);
+            }
         }
         public static List<AppUser> cargarusuarios()
         {

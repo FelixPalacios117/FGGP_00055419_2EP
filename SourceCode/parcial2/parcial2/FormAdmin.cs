@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
@@ -10,7 +11,7 @@ namespace parcial2
 {
     public partial class FormAdmin : Form
     {
-        public int id,id_negocio,id_producto;
+        public int id,id_negocio,id_producto,idadmin;
         private CartesianChart grafico;
         public FormAdmin()
         {
@@ -33,10 +34,9 @@ namespace parcial2
             cmbNegocios.DisplayMember="name"; 
             this.Controls.Add(grafico); 
             grafico.Parent = tabControl1.TabPages[5];
+            grafico.Parent.Size=new Size(800,220);
             configurarGrafico();
-            datosgrafico(); 
-            //this.Size =new System.Drawing.Size(923,741);
-            //tabControl1.Size=new System.Drawing.Size(892,651);
+            datosgrafico();   
         }
         private void configurarGrafico()
         {
@@ -121,6 +121,9 @@ namespace parcial2
             txtDescripcion.Clear();
             txtNombre.Clear();
             id = 0;
+            txtContranueva.Clear();
+            txtContranuevarepetida.Clear();
+            txtContraActual.Clear();
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -226,6 +229,41 @@ namespace parcial2
             FormLogin nuevo=new FormLogin();
             nuevo.Show();
             this.Hide();
+        }
+
+        private void btnCambiar_Click(object sender, EventArgs e)
+        {
+            if (txtContranuevarepetida.Text.Trim().Equals("") || txtContranueva.Text.Trim().Equals("") ||
+                txtContraActual.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("No puedes dejar campos vacios");
+            }
+            else
+            {
+                if (txtContranueva.Text.Equals(txtContranuevarepetida.Text))
+                {
+                    if (!AppUserCRUD.compararcontraseña(txtContraActual.Text, idadmin))
+                    {
+                        MessageBox.Show("Contraseña actual incorrecta");
+                    }
+                    else
+                    {
+                        if (txtContranueva.Text.Equals(txtContraActual.Text))
+                        {
+                            MessageBox.Show("La contraseña actual y la antigua deben ser diferentes");
+                        }
+                        else
+                        {
+                            AppUserCRUD.modificarpassword(txtContranueva.Text,idadmin);
+                            limpiar();   
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("La contraseña nueva debe ser igual en ambos campos");
+                }   
+            }
         }
     }
 }

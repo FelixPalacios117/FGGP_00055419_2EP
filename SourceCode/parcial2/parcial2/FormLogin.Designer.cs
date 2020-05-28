@@ -128,7 +128,7 @@ namespace parcial2
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormLogin";
+            this.Text = "Iniciar Sesion";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLogin_FormClosed);
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

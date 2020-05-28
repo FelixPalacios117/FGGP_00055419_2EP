@@ -49,12 +49,12 @@ namespace parcial2
             this.dataGridOrders = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtRepetir = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNueva = new System.Windows.Forms.TextBox();
+            this.txtActual = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridAddress)).BeginInit();
@@ -290,12 +290,12 @@ namespace parcial2
             // 
             this.tabPage5.BackColor = System.Drawing.Color.DarkViolet;
             this.tabPage5.Controls.Add(this.label9);
-            this.tabPage5.Controls.Add(this.textBox1);
+            this.tabPage5.Controls.Add(this.txtRepetir);
             this.tabPage5.Controls.Add(this.button1);
             this.tabPage5.Controls.Add(this.label11);
             this.tabPage5.Controls.Add(this.label12);
-            this.tabPage5.Controls.Add(this.textBox2);
-            this.tabPage5.Controls.Add(this.textBox3);
+            this.tabPage5.Controls.Add(this.txtNueva);
+            this.tabPage5.Controls.Add(this.txtActual);
             this.tabPage5.Location = new System.Drawing.Point(4, 37);
             this.tabPage5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage5.Name = "tabPage5";
@@ -316,17 +316,18 @@ namespace parcial2
             this.label9.Text = "Repetir contraseña";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // txtRepetir
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular,
+            this.txtRepetir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.textBox1.Location = new System.Drawing.Point(285, 421);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(322, 38);
-            this.textBox1.TabIndex = 34;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtRepetir.Location = new System.Drawing.Point(285, 421);
+            this.txtRepetir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtRepetir.Multiline = true;
+            this.txtRepetir.Name = "txtRepetir";
+            this.txtRepetir.PasswordChar = '*';
+            this.txtRepetir.Size = new System.Drawing.Size(322, 38);
+            this.txtRepetir.TabIndex = 34;
+            this.txtRepetir.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button1
             // 
@@ -338,8 +339,9 @@ namespace parcial2
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(321, 48);
             this.button1.TabIndex = 33;
-            this.button1.Text = "Crear";
+            this.button1.Text = "Cambiar ";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label11
             // 
@@ -365,30 +367,31 @@ namespace parcial2
             this.label12.Text = "Contraseña actual";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox2
+            // txtNueva
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular,
+            this.txtNueva.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.textBox2.Location = new System.Drawing.Point(285, 265);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(322, 38);
-            this.textBox2.TabIndex = 30;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNueva.Location = new System.Drawing.Point(285, 265);
+            this.txtNueva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNueva.Multiline = true;
+            this.txtNueva.Name = "txtNueva";
+            this.txtNueva.PasswordChar = '*';
+            this.txtNueva.Size = new System.Drawing.Size(322, 38);
+            this.txtNueva.TabIndex = 30;
+            this.txtNueva.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox3
+            // txtActual
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular,
+            this.txtActual.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.textBox3.Location = new System.Drawing.Point(286, 118);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(322, 38);
-            this.textBox3.TabIndex = 29;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtActual.Location = new System.Drawing.Point(286, 118);
+            this.txtActual.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtActual.Multiline = true;
+            this.txtActual.Name = "txtActual";
+            this.txtActual.PasswordChar = '*';
+            this.txtActual.Size = new System.Drawing.Size(322, 38);
+            this.txtActual.TabIndex = 29;
+            this.txtActual.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FormUser
             // 
@@ -424,12 +427,9 @@ namespace parcial2
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.DataGridView dataGridAddress;
@@ -440,5 +440,8 @@ namespace parcial2
         private System.Windows.Forms.ComboBox cmbProducto;
         private System.Windows.Forms.Button btnDeleteOrder;
         private System.Windows.Forms.Button btnAddOrder;
+        private System.Windows.Forms.TextBox txtRepetir;
+        private System.Windows.Forms.TextBox txtNueva;
+        private System.Windows.Forms.TextBox txtActual;
     }
 }

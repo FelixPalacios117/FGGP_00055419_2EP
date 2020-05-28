@@ -61,16 +61,16 @@ namespace parcial2
             this.txtNameProduct = new System.Windows.Forms.TextBox();
             this.dataGridProducto = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.dataGridOrders = new System.Windows.Forms.DataGridView();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtContranuevarepetida = new System.Windows.Forms.TextBox();
+            this.btnCambiar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtContranueva = new System.Windows.Forms.TextBox();
+            this.txtContraActual = new System.Windows.Forms.TextBox();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridUsers)).BeginInit();
@@ -79,8 +79,8 @@ namespace parcial2
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridProducto)).BeginInit();
             this.tabPage4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridOrders)).BeginInit();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -492,32 +492,6 @@ namespace parcial2
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Ordenes";
             // 
-            // tabPage5
-            // 
-            this.tabPage5.BackColor = System.Drawing.Color.DarkViolet;
-            this.tabPage5.Controls.Add(this.label9);
-            this.tabPage5.Controls.Add(this.textBox1);
-            this.tabPage5.Controls.Add(this.button1);
-            this.tabPage5.Controls.Add(this.label11);
-            this.tabPage5.Controls.Add(this.label12);
-            this.tabPage5.Controls.Add(this.textBox2);
-            this.tabPage5.Controls.Add(this.textBox3);
-            this.tabPage5.Location = new System.Drawing.Point(4, 37);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(892, 651);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Cambiar contraseña";
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.BackColor = System.Drawing.Color.DarkViolet;
-            this.tabPage6.Location = new System.Drawing.Point(4, 37);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(892, 651);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Estadisticas";
-            // 
             // dataGridOrders
             // 
             this.dataGridOrders.AllowUserToAddRows = false;
@@ -535,6 +509,24 @@ namespace parcial2
             this.dataGridOrders.Size = new System.Drawing.Size(846, 612);
             this.dataGridOrders.TabIndex = 34;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.BackColor = System.Drawing.Color.DarkViolet;
+            this.tabPage5.Controls.Add(this.label9);
+            this.tabPage5.Controls.Add(this.txtContranuevarepetida);
+            this.tabPage5.Controls.Add(this.btnCambiar);
+            this.tabPage5.Controls.Add(this.label11);
+            this.tabPage5.Controls.Add(this.label12);
+            this.tabPage5.Controls.Add(this.txtContranueva);
+            this.tabPage5.Controls.Add(this.txtContraActual);
+            this.tabPage5.Location = new System.Drawing.Point(4, 37);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage5.Size = new System.Drawing.Size(892, 651);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Cambiar contraseña";
+            // 
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular,
@@ -547,37 +539,39 @@ namespace parcial2
             this.label9.Text = "Repetir contraseña";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // txtContranuevarepetida
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular,
+            this.txtContranuevarepetida.Font = new System.Drawing.Font("Segoe UI", 12F,
+                System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.txtContranuevarepetida.Location = new System.Drawing.Point(284, 421);
+            this.txtContranuevarepetida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtContranuevarepetida.Multiline = true;
+            this.txtContranuevarepetida.Name = "txtContranuevarepetida";
+            this.txtContranuevarepetida.PasswordChar = '*';
+            this.txtContranuevarepetida.Size = new System.Drawing.Size(322, 38);
+            this.txtContranuevarepetida.TabIndex = 27;
+            this.txtContranuevarepetida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnCambiar
+            // 
+            this.btnCambiar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCambiar.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.textBox1.Location = new System.Drawing.Point(284, 421);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(322, 38);
-            this.textBox1.TabIndex = 27;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.button1.Location = new System.Drawing.Point(285, 537);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(321, 48);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Crear";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnCambiar.Location = new System.Drawing.Point(285, 538);
+            this.btnCambiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCambiar.Name = "btnCambiar";
+            this.btnCambiar.Size = new System.Drawing.Size(321, 48);
+            this.btnCambiar.TabIndex = 26;
+            this.btnCambiar.Text = "Cambiar";
+            this.btnCambiar.UseVisualStyleBackColor = false;
+            this.btnCambiar.Click += new System.EventHandler(this.btnCambiar_Click);
             // 
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(290, 213);
+            this.label11.Location = new System.Drawing.Point(290, 212);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(315, 41);
             this.label11.TabIndex = 25;
@@ -596,30 +590,41 @@ namespace parcial2
             this.label12.Text = "Contraseña actual";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox2
+            // txtContranueva
             // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular,
+            this.txtContranueva.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.textBox2.Location = new System.Drawing.Point(284, 265);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(322, 38);
-            this.textBox2.TabIndex = 23;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtContranueva.Location = new System.Drawing.Point(284, 265);
+            this.txtContranueva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtContranueva.Multiline = true;
+            this.txtContranueva.Name = "txtContranueva";
+            this.txtContranueva.PasswordChar = '*';
+            this.txtContranueva.Size = new System.Drawing.Size(322, 38);
+            this.txtContranueva.TabIndex = 23;
+            this.txtContranueva.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox3
+            // txtContraActual
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular,
+            this.txtContraActual.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.textBox3.Location = new System.Drawing.Point(285, 117);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(322, 38);
-            this.textBox3.TabIndex = 22;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtContraActual.Location = new System.Drawing.Point(285, 118);
+            this.txtContraActual.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtContraActual.Multiline = true;
+            this.txtContraActual.Name = "txtContraActual";
+            this.txtContraActual.PasswordChar = '*';
+            this.txtContraActual.Size = new System.Drawing.Size(322, 38);
+            this.txtContraActual.TabIndex = 22;
+            this.txtContraActual.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.BackColor = System.Drawing.Color.DarkViolet;
+            this.tabPage6.Location = new System.Drawing.Point(4, 37);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(892, 651);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Estadisticas";
             // 
             // FormAdmin
             // 
@@ -632,7 +637,7 @@ namespace parcial2
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormAdmin";
+            this.Text = "Administrador";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAdmin_FormClosed);
             this.Load += new System.EventHandler(this.FormAdmin_Load);
             this.tabControl1.ResumeLayout(false);
@@ -646,9 +651,9 @@ namespace parcial2
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridProducto)).EndInit();
             this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridOrders)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.dataGridOrders)).EndInit();
             this.ResumeLayout(false);
         }
 
@@ -686,13 +691,13 @@ namespace parcial2
         private System.Windows.Forms.TextBox txtNameProduct;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridOrders;
+        private System.Windows.Forms.Button btnCambiar;
+        private System.Windows.Forms.TextBox txtContranuevarepetida;
+        private System.Windows.Forms.TextBox txtContranueva;
+        private System.Windows.Forms.TextBox txtContraActual;
     }
 }

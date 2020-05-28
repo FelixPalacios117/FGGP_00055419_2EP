@@ -25,15 +25,16 @@ namespace parcial2
                         case true:
                             MessageBox.Show("Bienvenido administrador :"+txtUser.Text);
                             FormAdmin admin=new FormAdmin();
+                            admin.idadmin = AppUserCRUD.id_obtenido;
                             admin.Show();
                             this.Hide();
                             break;
                         case false:
                             MessageBox.Show("Bienvenido usuario : "+txtUser.Text);
-                            this.Hide();
                             FormUser usuarionormal=new FormUser();
                             usuarionormal.idcliente = AppUserCRUD.id_obtenido;
                             usuarionormal.Show();
+                            this.Hide();
                             break;
                     } 
                 }

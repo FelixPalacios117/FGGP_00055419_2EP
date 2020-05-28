@@ -39,6 +39,9 @@ namespace parcial2
             txtAddress.Clear();
             id_orden = 0;
             id_direccion = 0;
+            txtNueva.Clear();
+            txtRepetir.Clear();
+            txtActual.Clear();
         }
 
         private void dataGridAddress_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -158,6 +161,41 @@ namespace parcial2
             FormLogin nuevo=new FormLogin();
             nuevo.Show();
             this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtRepetir.Text.Trim().Equals("") || txtNueva.Text.Trim().Equals("") ||
+                txtActual.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("No puedes dejar campos vacios");
+            }
+            else
+            {
+                if (txtRepetir.Text.Equals(txtNueva.Text))
+                {
+                    if (!AppUserCRUD.compararcontraseña(txtActual.Text,idcliente))
+                    {
+                        MessageBox.Show("Contraseña actual incorrecta");
+                    }
+                    else
+                    {
+                        if (txtRepetir.Text.Equals(txtActual.Text))
+                        {
+                            MessageBox.Show("La contraseña actual y la antigua deben ser diferentes");
+                        }
+                        else
+                        {
+                            AppUserCRUD.modificarpassword(txtNueva.Text,idcliente);
+                            limpiar();   
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("La contraseña nueva debe ser igual en ambos campos");
+                }   
+            }
         }
     }
 }
