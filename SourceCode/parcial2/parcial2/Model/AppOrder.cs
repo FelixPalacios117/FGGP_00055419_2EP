@@ -6,15 +6,17 @@ namespace parcial2
     {
         public int idOrder { get; set; }
         public DateTime createDate { get; set; }
-        public int idProduct { get; set; }
-        public int idAddress { get; set; }
+        public string product { get;set; }
+        public string address { get; set; }
+        public string nombre { get; set; } 
 
         public AppOrder()
         {
             idOrder = 0;
+            nombre = "";
             createDate = DateTime.Now;
-            idProduct = 0;
-            idAddress = 0;
+            product = "";
+            address = ""; 
         }
     }
 }

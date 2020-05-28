@@ -64,11 +64,35 @@ namespace parcial2
                 MessageBox.Show("Ha ocurrido un error, Verifica los datos");
             }
         }
+        public static List<Business> getGrafico()
+        {
+            List<Business> lista = new List<Business>();
+            try
+            {
+                string sql = String.Format("SELECT b.name AS Negocio, sum(cp.cant) AS Total_pedidos "+
+                "FROM BUSINESS b, (SELECT p.idBusiness, p.name, count(ap.idProduct) AS cant FROM PRODUCT p, APPORDER ap "+
+                "WHERE p.idProduct = ap.idProduct GROUP BY p.idProduct ORDER BY p.name ASC) AS cp WHERE b.idBusiness = cp.idBusiness"+
+                " GROUP BY b.idBusiness;");
+                DataTable dt = ConnectionDB.ExecuteQuery(sql);
+                foreach (DataRow fila in dt.Rows)
+                {
+                    Business f = new Business();
+                    f.name = fila[0].ToString();
+                    f.idBusiness= Convert.ToInt32(fila[1].ToString());  
+                    lista.Add(f);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Hubo errores" + e);
+            }
+            return lista;
+        }
         public static void Eliminarnegocio(int id)
         {
             try
             {
-                string sql = String.Format("delete from business where idbusiness='{0}';",
+                string sql = String.Format("delete from business where idbusiness={0};",
                     id);
                 ConnectionDB.Executenonquery(sql);
                 MessageBox.Show("Se eliminó el negocio y su informacion ");

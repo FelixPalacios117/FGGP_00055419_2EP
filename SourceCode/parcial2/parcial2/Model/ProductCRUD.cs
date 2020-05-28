@@ -7,6 +7,27 @@ namespace parcial2
 {
     public static class ProductCRUD
     {
+        public static List<Product> cargarproductoscmb()
+        {
+            List <Product> lista= new List<Product>();
+            try
+            {
+                string sql = "select idproduct,name from product";
+                DataTable dt = ConnectionDB.ExecuteQuery(sql);
+                foreach (DataRow fila in dt.Rows)
+                {
+                    Product pro=new Product();
+                    pro.idProduct = Convert.ToInt32(fila[0].ToString());
+                    pro.name= fila[1].ToString(); 
+                    lista.Add(pro);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error" + e);
+            }
+            return lista;
+        }
         public static List<Product> cargarproductos()
         {
             List <Product> lista= new List<Product>();

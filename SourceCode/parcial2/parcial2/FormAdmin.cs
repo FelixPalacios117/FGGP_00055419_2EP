@@ -1,20 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using LiveCharts;
+using LiveCharts.Wpf;
+using CartesianChart = LiveCharts.WinForms.CartesianChart;
 
 namespace parcial2
 {
     public partial class FormAdmin : Form
     {
         public int id,id_negocio,id_producto;
+        private CartesianChart grafico;
         public FormAdmin()
         {
             InitializeComponent();
             id = id_negocio =id_producto= 0;
         }
-
+    
         private void FormAdmin_Load(object sender, EventArgs e)
         {
+            grafico = new CartesianChart();
             cargardatos();
             dataGridUsers.Columns[1].Visible = false;
             dataGridUsers.Columns[3].Visible = false;
@@ -25,14 +31,45 @@ namespace parcial2
             cmbNegocios.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbNegocios.ValueMember = "idBusiness";
             cmbNegocios.DisplayMember="name"; 
+            this.Controls.Add(grafico); 
+            grafico.Parent = tabControl1.TabPages[5];
+            configurarGrafico();
+            datosgrafico(); 
+            //this.Size =new System.Drawing.Size(923,741);
+            //tabControl1.Size=new System.Drawing.Size(892,651);
         }
-
+        private void configurarGrafico()
+        {
+            grafico.Top = 20;
+            grafico.Left = 20;
+            grafico.Width = grafico.Parent.Width-20;
+            grafico.Height = grafico.Parent.Height-20; 
+            grafico.Series = new SeriesCollection
+            {
+                new ColumnSeries{Title = "Negocio respecto a demanda", Values = new ChartValues<int>(), DataLabels = true} 
+            };
+            grafico.AxisX.Add(new Axis{Labels = new List<string>()});
+            grafico.AxisX[0].Separator = new Separator() {Step = 1, IsEnabled = false};
+            grafico.LegendLocation = LegendLocation.Top;
+        } 
+        private void datosgrafico()
+        {
+            grafico.Series[0].Values.Clear();
+            grafico.AxisX[0].Labels.Clear();
+            
+            foreach (Business b in BusinessCRUD.getGrafico())
+            { 
+                grafico.Series[0].Values.Add(b.idBusiness);
+                grafico.AxisX[0].Labels.Add(b.name);
+            }
+        }
         void cargardatos()
         {
             dataGridUsers.DataSource = AppUserCRUD.cargarusuarios();   
             dataGridNegocio.DataSource = BusinessCRUD.cargarnegocios();
             cmbNegocios.DataSource = BusinessCRUD.cargarnegocioscombobox();
             dataGridProducto.DataSource = ProductCRUD.cargarproductos();
+            dataGridOrders.DataSource = AppOrderCRUD.cargarordenes();
         }
         private void dataGridUsers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -158,8 +195,7 @@ namespace parcial2
             }
             else
             {
-                int idn = Convert.ToInt32(cmbNegocios.SelectedValue.ToString());
-                MessageBox.Show(idn.ToString());
+                int idn = Convert.ToInt32(cmbNegocios.SelectedValue.ToString()); 
                 ProductCRUD.crearproducto(idn,txtNameProduct.Text);
                 cargardatos();
                 limpiar(); 

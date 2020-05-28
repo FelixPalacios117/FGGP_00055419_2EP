@@ -32,3 +32,12 @@ C:\Users\felix\OneDrive\Desktop\FGGP_00055419_2EP\SourceCode\parcial2\parcial2\o
 C:\Users\felix\OneDrive\Desktop\FGGP_00055419_2EP\SourceCode\parcial2\parcial2\obj\Debug\parcial2.FormLogin.resources
 C:\Users\felix\OneDrive\Desktop\FGGP_00055419_2EP\SourceCode\parcial2\parcial2\obj\Debug\parcial2.FormUser.resources
 C:\Users\felix\OneDrive\Desktop\FGGP_00055419_2EP\SourceCode\parcial2\parcial2\obj\Debug\parcial2.FormAdmin.resources
+C:\Users\felix\OneDrive\Desktop\FGGP_00055419_2EP\SourceCode\parcial2\parcial2\bin\Debug\LiveCharts.dll
+C:\Users\felix\OneDrive\Desktop\FGGP_00055419_2EP\SourceCode\parcial2\parcial2\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\felix\OneDrive\Desktop\FGGP_00055419_2EP\SourceCode\parcial2\parcial2\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\felix\OneDrive\Desktop\FGGP_00055419_2EP\SourceCode\parcial2\parcial2\bin\Debug\LiveCharts.pdb
+C:\Users\felix\OneDrive\Desktop\FGGP_00055419_2EP\SourceCode\parcial2\parcial2\bin\Debug\LiveCharts.xml
+C:\Users\felix\OneDrive\Desktop\FGGP_00055419_2EP\SourceCode\parcial2\parcial2\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\felix\OneDrive\Desktop\FGGP_00055419_2EP\SourceCode\parcial2\parcial2\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\felix\OneDrive\Desktop\FGGP_00055419_2EP\SourceCode\parcial2\parcial2\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\felix\OneDrive\Desktop\FGGP_00055419_2EP\SourceCode\parcial2\parcial2\bin\Debug\LiveCharts.Wpf.xml

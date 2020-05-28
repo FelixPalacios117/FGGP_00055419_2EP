@@ -30,10 +30,10 @@ namespace parcial2
                             break;
                         case false:
                             MessageBox.Show("Bienvenido usuario : "+txtUser.Text);
+                            this.Hide();
                             FormUser usuarionormal=new FormUser();
                             usuarionormal.idcliente = AppUserCRUD.id_obtenido;
                             usuarionormal.Show();
-                            this.Hide();
                             break;
                     } 
                 }

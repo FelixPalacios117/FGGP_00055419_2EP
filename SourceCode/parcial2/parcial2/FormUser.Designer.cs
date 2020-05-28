@@ -40,6 +40,12 @@ namespace parcial2
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.dataGridAddress = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnAddOrder = new System.Windows.Forms.Button();
+            this.btnDeleteOrder = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbDireccion = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbProducto = new System.Windows.Forms.ComboBox();
             this.dataGridOrders = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
@@ -101,6 +107,7 @@ namespace parcial2
             this.btnModificar.TabIndex = 22;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -114,6 +121,7 @@ namespace parcial2
             this.btnEliminar.TabIndex = 17;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnCrear
             // 
@@ -127,6 +135,7 @@ namespace parcial2
             this.btnCrear.TabIndex = 16;
             this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = false;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
             // label1
             // 
@@ -174,6 +183,12 @@ namespace parcial2
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.DarkViolet;
+            this.tabPage4.Controls.Add(this.btnAddOrder);
+            this.tabPage4.Controls.Add(this.btnDeleteOrder);
+            this.tabPage4.Controls.Add(this.label2);
+            this.tabPage4.Controls.Add(this.cmbDireccion);
+            this.tabPage4.Controls.Add(this.label4);
+            this.tabPage4.Controls.Add(this.cmbProducto);
             this.tabPage4.Controls.Add(this.dataGridOrders);
             this.tabPage4.Location = new System.Drawing.Point(4, 37);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -181,6 +196,76 @@ namespace parcial2
             this.tabPage4.Size = new System.Drawing.Size(892, 651);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Ordenes";
+            // 
+            // btnAddOrder
+            // 
+            this.btnAddOrder.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAddOrder.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnAddOrder.Location = new System.Drawing.Point(27, 572);
+            this.btnAddOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddOrder.Name = "btnAddOrder";
+            this.btnAddOrder.Size = new System.Drawing.Size(377, 48);
+            this.btnAddOrder.TabIndex = 41;
+            this.btnAddOrder.Text = "Crear";
+            this.btnAddOrder.UseVisualStyleBackColor = false;
+            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
+            // 
+            // btnDeleteOrder
+            // 
+            this.btnDeleteOrder.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDeleteOrder.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnDeleteOrder.Location = new System.Drawing.Point(473, 572);
+            this.btnDeleteOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDeleteOrder.Name = "btnDeleteOrder";
+            this.btnDeleteOrder.Size = new System.Drawing.Size(377, 48);
+            this.btnDeleteOrder.TabIndex = 40;
+            this.btnDeleteOrder.Text = "Eliminar";
+            this.btnDeleteOrder.UseVisualStyleBackColor = false;
+            this.btnDeleteOrder.Click += new System.EventHandler(this.btnDeleteOrder_Click);
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(531, 418);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(270, 41);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Direccion";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cmbDireccion
+            // 
+            this.cmbDireccion.FormattingEnabled = true;
+            this.cmbDireccion.Location = new System.Drawing.Point(473, 481);
+            this.cmbDireccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbDireccion.Name = "cmbDireccion";
+            this.cmbDireccion.Size = new System.Drawing.Size(377, 36);
+            this.cmbDireccion.TabIndex = 37;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(86, 418);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(270, 41);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "Producto";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cmbProducto
+            // 
+            this.cmbProducto.FormattingEnabled = true;
+            this.cmbProducto.Location = new System.Drawing.Point(27, 481);
+            this.cmbProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbProducto.Name = "cmbProducto";
+            this.cmbProducto.Size = new System.Drawing.Size(377, 36);
+            this.cmbProducto.TabIndex = 35;
             // 
             // dataGridOrders
             // 
@@ -191,13 +276,15 @@ namespace parcial2
             this.dataGridOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridOrders.ColumnHeadersHeightSizeMode =
                 System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridOrders.Location = new System.Drawing.Point(25, 19);
+            this.dataGridOrders.Location = new System.Drawing.Point(27, 22);
             this.dataGridOrders.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridOrders.Name = "dataGridOrders";
             this.dataGridOrders.ReadOnly = true;
             this.dataGridOrders.RowTemplate.Height = 24;
-            this.dataGridOrders.Size = new System.Drawing.Size(846, 612);
+            this.dataGridOrders.Size = new System.Drawing.Size(844, 349);
             this.dataGridOrders.TabIndex = 34;
+            this.dataGridOrders.CellClick +=
+                new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridOrders_CellClick);
             // 
             // tabPage5
             // 
@@ -312,7 +399,9 @@ namespace parcial2
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuario";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormUser_FormClosed);
             this.Load += new System.EventHandler(this.FormUser_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -345,5 +434,11 @@ namespace parcial2
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.DataGridView dataGridAddress;
         private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbDireccion;
+        private System.Windows.Forms.ComboBox cmbProducto;
+        private System.Windows.Forms.Button btnDeleteOrder;
+        private System.Windows.Forms.Button btnAddOrder;
     }
 }

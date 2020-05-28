@@ -28,28 +28,43 @@ namespace parcial2
             }
             return lista;
         }
-        public static void crearnegocio(string nombre,string descripcion)
+        public static void creardireccion(string nombre,int id)
         {
             try
             {
-                string sql = String.Format("insert into business(name,description)"
-                                           +"values('{0}','{1}')", nombre, descripcion);
+                string sql = String.Format("insert into address(idUser,address)"
+                                           +"values('{0}','{1}')",id, nombre);
                 ConnectionDB.Executenonquery(sql);
-                MessageBox.Show("Negocio creado correctamente");
+                MessageBox.Show("Direccion registrada correctamente");
             }
             catch (Exception e)
             {
-                MessageBox.Show("Ha ocurrido un error, Verifica los datos");
+                MessageBox.Show("Ha ocurrido un error, Verifica los datos"+e);
             }
         }
-        public static void Eliminarnegocio(int id)
+        public static void Eliminardireccion(int id,int iduser)
         {
             try
             {
-                string sql = String.Format("delete from business where idbusiness='{0}';",
-                    id);
+                string sql = String.Format("delete from address where idaddress={0} and idUser={1};",
+                    id,iduser);
                 ConnectionDB.Executenonquery(sql);
-                MessageBox.Show("Se eliminó el negocio y su informacion ");
+                MessageBox.Show("Se elimino la direccion correctamente ");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Ha ocurrido un error" + e);
+            }
+        }
+        public static void modificardireccion(string usuario,int id)
+        {
+            try
+            {
+                string sql = String.Format(
+                    "update address set address='{0}' where idaddress='{1}';",
+                    usuario,id);
+                ConnectionDB.Executenonquery(sql);
+                MessageBox.Show("Datos modificados correctamente");
             }
             catch (Exception e)
             {
